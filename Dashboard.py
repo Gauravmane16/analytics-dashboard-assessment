@@ -1,12 +1,13 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
-import seaborn as sns
-import matplotlib.pyplot as plt
+# import plotly.express as px
+# import plotly.graph_objects as go
+import plotly_express as px
+# from plotly.subplots import make_subplots
+# import seaborn as sns
+# import matplotlib.pyplot as plt
 from datetime import datetime
-import numpy as np
+# import numpy as np
 import time
 
 # Set page configuration
@@ -115,7 +116,7 @@ st.markdown("""
 # Load data with progress bar
 @st.cache_data
 def load_data():
-    df = pd.read_csv("./Electric_Vehicle_Population_Data.csv")
+    df = pd.read_csv("data-to-visualize/Electric_Vehicle_Population_Data.csv")
     df['Model Year'] = pd.to_numeric(df['Model Year'], errors='coerce')
     return df
 
